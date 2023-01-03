@@ -18,7 +18,7 @@ export default function Index({ allPosts }: Props) {
     <>
       <Layout>
         <Head>
-          <title>Clo.Mid/Home</title>
+          <title>Clo.Mid</title>
         </Head>
         <Container>
           <div className='flex flex-col h-screen'>
