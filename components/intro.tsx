@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import DarkSwitch from './dark-switch'
 
 const Intro = () => {
   return (
-    <section className="flex-col md:flex-row flex items-center md:justify-between my-4">
-      <h1 className="text-5xl font-bold tracking-tighter">
-        Clo.Mid
-      </h1>
-      <div>
-        <DarkSwitch />
+    <section className="flex-initial">
+      <div className='flex-row flex items-center justify-between  py-4'>
+        <h1 className="text-5xl font-bold tracking-tighter">
+          Clo.Mid
+        </h1>
+        <div>
+          <DarkSwitch />
+        </div>
       </div>
     </section>
   )

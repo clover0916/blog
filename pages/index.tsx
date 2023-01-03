@@ -5,7 +5,6 @@ import Intro from '../components/intro'
 import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
 import Post from '../interfaces/post'
 
 type Props = {
@@ -22,17 +21,19 @@ export default function Index({ allPosts }: Props) {
           <title>Clo.Mid/Home</title>
         </Head>
         <Container>
-          <Intro />
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
+          <div className='flex flex-col h-screen'>
+            <Intro />
+            {heroPost && (
+              <HeroPost
+                title={heroPost.title}
+                coverImage={heroPost.coverImage}
+                date={heroPost.date}
+                author={heroPost.author}
+                slug={heroPost.slug}
+                excerpt={heroPost.excerpt}
+              />
+            )}
+          </div>
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
       </Layout>
