@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply dark:bg-zinc-900 bg-white;
+  }
+}
+
+html,
+body {
+  font-family: "Montserrat", "Noto Sans JP";
+}
+
+.h-100svh {
+  height: 100vh;
+  height: 100svh;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(37, 37, 37, 0.5);
+  border-radius: 16px;
+}

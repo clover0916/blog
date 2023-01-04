@@ -24,7 +24,7 @@ const CoverImage = ({ title, src, slug }: Props) => {
       <img
         src={"/assets/noimage.svg"}
         alt={`Cover Image for ${title}`}
-        className="dark:invert duration-100"
+        className="dark:invert select-none duration-100"
         width={"auto"}
         height={"100%"}
       />
