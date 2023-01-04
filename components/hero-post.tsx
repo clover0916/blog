@@ -3,6 +3,7 @@ import DateFormatter from './date-formatter'
 import HeroImage from './hero-image'
 import Link from 'next/link'
 import type Author from '../interfaces/author'
+import cn from 'classnames'
 
 type Props = {
   title: string
@@ -22,12 +23,14 @@ const HeroPost = ({
   slug,
 }: Props) => {
   return (
-    <section className='flex-1'>
+    <section className='flex-1 shrink-0'>
       <div className='flex flex-col h-full'>
-        <div className="grow grid place-items-center">
+        <div className={cn('grow flex-1 shadow-sm', {
+          'hover:shadow-lg transition-shadow duration-200': slug,
+        })}>
           <HeroImage title={title} src={coverImage} slug={slug} />
         </div>
-        <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 m-8">
+        <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 m-8 h-50">
           <div>
             <h3 className="mb-4 text-4xl lg:text-5xl leading-tight">
               <Link
