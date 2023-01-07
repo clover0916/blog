@@ -4,6 +4,10 @@ module.exports = {
   darkMode: 'class',  
   theme: {
     extend: {
+      screens: {
+        'short': { 'raw': '(max-height: 800px)' },
+        // => @media (min-height: 800px) { ... }
+      },
       colors: {
         'accent-1': '#FAFAFA',
         'accent-2': '#EAEAEA',
@@ -19,6 +23,9 @@ module.exports = {
       },
       lineHeight: {
         tight: 1.2,
+      },
+      fontFamily: {
+        sans: ['Montserrat', 'Noto Sans JP', 'sans-serif'],
       },
       fontSize: {
         '5xl': '2.5rem',

@@ -1,6 +1,6 @@
 import Avatar from './avatar'
 import DateFormatter from './date-formatter'
-import HeroImage from './hero-image'
+import HeroImage from './cover-image'
 import Link from 'next/link'
 import type Author from '../interfaces/author'
 import cn from 'classnames'
@@ -23,14 +23,14 @@ const HeroPost = ({
   slug,
 }: Props) => {
   return (
-    <section className='flex-1 shrink-0'>
+    <section className='short:w-full lg:w-4/6 lg:row-span-2 h-full'>
       <div className='flex flex-col h-full'>
         <div className={cn('grow flex-1 shadow-sm', {
           'hover:shadow-lg transition-shadow duration-200': slug,
         })}>
           <HeroImage title={title} src={coverImage} slug={slug} />
         </div>
-        <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 m-8 h-50">
+        <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 p-4 pb-0">
           <div>
             <h3 className="mb-4 text-4xl lg:text-5xl leading-tight">
               <Link

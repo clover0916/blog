@@ -1,8 +1,9 @@
-import Avatar from './avatar'
+import SubAvatar from './sub-avatar'
 import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
 import Link from 'next/link'
 import type Author from '../interfaces/author'
+import cn from 'classnames'
 
 type Props = {
   title: string
@@ -22,25 +23,28 @@ const PostPreview = ({
   slug,
 }: Props) => {
   return (
-    <div>
-      <div className="mb-5">
-        <CoverImage slug={slug} title={title} src={coverImage} />
+    <section className='flex h-1/2 flex-col'>
+      <div className={cn('grow flex-1 shadow-sm mb-2', {
+        'hover:shadow-lg transition-shadow duration-200': slug,
+      })}>
+        <CoverImage title={title} src={coverImage} slug={slug} />
       </div>
-      <h3 className="text-3xl mb-3 leading-snug">
-        <Link
-          as={`/posts/${slug}`}
-          href="/posts/[slug]"
-          className="hover:underline"
-        >
-          {title}
-        </Link>
-      </h3>
-      <div className="text-lg mb-4">
-        <DateFormatter dateString={date} />
+      <div className='px-2'>
+        <h3 className="text-3xl mb-1 leading-snug">
+          <Link
+            as={`/posts/${slug}`}
+            href="/posts/[slug]"
+            className="hover:underline"
+          >
+            {title}
+          </Link>
+        </h3>
+        <div className="text-lg mb-2">
+          <DateFormatter dateString={date} />
+        </div>
+        <SubAvatar name={author.name} picture={author.picture} />
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar name={author.name} picture={author.picture} />
-    </div>
+    </section>
   )
 }
 

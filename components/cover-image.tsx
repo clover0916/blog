@@ -1,6 +1,6 @@
-import cn from 'classnames'
 import Link from 'next/link'
 import Image from 'next/image'
+import cn from 'classnames'
 
 type Props = {
   title: string
@@ -9,27 +9,36 @@ type Props = {
 }
 
 const CoverImage = ({ title, src, slug }: Props) => {
-  const image = (
-    <Image
-      src={src}
-      alt={`Cover Image for ${title}`}
-      className={cn('shadow-sm', {
-        'hover:shadow-lg transition-shadow duration-200': slug,
-      })}
-      width={1300}
-      height={630}
-    />
-  )
+  var image
+  if (src) {
+     image = (
+      <img
+        src={src}
+        alt={`Cover Image for ${title}`}
+        width={"auto"}
+        height={"100%"}
+      />
+    )
+  } else {
+    image = (
+      <img
+        src={"/assets/noimage.svg"}
+        alt={`Cover Image for ${title}`}
+        className="dark:invert select-none duration-100 h-2/5"
+        width={"auto"}
+      />
+    )
+  }
   return (
-    <div className="sm:mx-0">
+    <>
       {slug ? (
-        <Link as={`/posts/${slug}`} href="/posts/[slug]" aria-label={title}>
+        <Link as={`/posts/${slug}`} className="h-full w-full grid place-items-center bg-gray-100 dark:bg-zinc-700 duration-100" href="/posts/[slug]" aria-label={title}>
           {image}
         </Link>
       ) : (
         image
       )}
-    </div>
+    </>
   )
 }
 
