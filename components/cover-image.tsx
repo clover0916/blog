@@ -32,7 +32,7 @@ const CoverImage = ({ title, src, slug }: Props) => {
   return (
     <>
       {slug ? (
-        <Link as={`/posts/${slug}`} className="h-full w-full grid place-items-center bg-gray-100 dark:bg-zinc-700 duration-100" href="/posts/[slug]" aria-label={title}>
+        <Link as={`/posts/${slug}`} className="h-full w-full flex justify-center items-center overflow-hidden bg-gray-100 dark:bg-zinc-700 duration-100" href="/posts/[slug]" aria-label={title}>
           {image}
         </Link>
       ) : (
