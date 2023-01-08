@@ -16,7 +16,8 @@ type Props = {
 export default function Index({ allPosts }: Props) {
   const heroPost = allPosts[0]
   const subPosts = allPosts.slice(1, 3)
-  const morePosts = allPosts.slice(3)
+  const fullmorePosts = allPosts.slice(3)
+  const morePosts = allPosts.slice(1)
   return (
     <>
       <Layout>
@@ -32,13 +33,13 @@ export default function Index({ allPosts }: Props) {
                   <HeroPost
                     title={heroPost.title}
                     coverImage={heroPost.coverImage}
-                    date={heroPost.date}  
+                    date={heroPost.date}
                     author={heroPost.author}
                     slug={heroPost.slug}
                     excerpt={heroPost.excerpt}
                   />
                 )}
-                <div className='flex-1 h-full hidden lg:flex flex-col gap-4 short:hidden'>
+                <div className='flex-1 h-full hidden duration-200 lg:flex flex-col gap-4 short:hidden'>
                   {subPosts.map((post) => (
                     <PostPreview
                       key={post.slug}
@@ -54,7 +55,14 @@ export default function Index({ allPosts }: Props) {
               </div>
             </section>
           </div>
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          <div>
+            <div className='hidden lg:block'>
+              {fullmorePosts.length > 0 && <MoreStories posts={fullmorePosts} />}
+            </div>
+            <div className='lg:hidden'>
+              {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+            </div>
+          </div>
         </Container>
       </Layout>
     </>
