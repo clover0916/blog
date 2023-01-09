@@ -15,8 +15,8 @@ const CoverImage = ({ title, src, slug }: Props) => {
       <Image
         src={src}
         alt={`Cover Image for ${title}`}
-        width={"500"}
-        height={"500"}
+        width={"2000"}
+        height={"2000"}
       />
     )
   } else {
