@@ -23,7 +23,7 @@ const MorePostPreview = ({
   slug,
 }: Props) => {
   return (
-    <li className='relative lg:h-48 h-28 py-4 first:pt-0 last:pb-0'>
+    <li className='relative lg:h-48 h-32 py-4 first:pt-0 last:pb-0'>
       <Link
         as={`/posts/${slug}`}
         href="/posts/[slug]"

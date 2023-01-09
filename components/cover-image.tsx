@@ -11,28 +11,28 @@ type Props = {
 const CoverImage = ({ title, src, slug }: Props) => {
   var image
   if (src) {
-     image = (
-      <img
+    image = (
+      <Image
         src={src}
         alt={`Cover Image for ${title}`}
-        width={"auto"}
-        height={"100%"}
+        width={"500"}
+        height={"500"}
       />
     )
   } else {
     image = (
-      <img
+      <Image
         src={"/assets/noimage.svg"}
         alt={`Cover Image for ${title}`}
-        className="dark:invert select-none duration-100 h-2/5"
-        width={"auto"}
+        className="dark:invert select-none duration-100 object-scale-down"
+        fill
       />
     )
   }
   return (
     <>
       {slug ? (
-        <Link as={`/posts/${slug}`} className="h-full w-full flex justify-center items-center overflow-hidden bg-gray-100 dark:bg-zinc-700 duration-100" href="/posts/[slug]" aria-label={title}>
+        <Link as={`/posts/${slug}`} className="relative h-full w-full flex justify-center items-center overflow-hidden bg-gray-100 dark:bg-zinc-700 duration-100" href="/posts/[slug]" aria-label={title}>
           {image}
         </Link>
       ) : (
