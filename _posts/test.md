@@ -1,7 +1,7 @@
 ---
 title: 'Test3'
 excerpt: 'Test'
-coverImage: '/assets/blog/dynamic-routing/cover.jpg'
+coverImage: '/assets/blog/dynamic-routing/cover.webp'
 date: '2020-03-15T05:35:07.322Z'
 author:
   name: Clover_Midori
