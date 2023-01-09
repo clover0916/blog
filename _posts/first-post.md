@@ -4,9 +4,9 @@ excerpt: 'うっひょー、暇だったからMarkdownブログ作っちゃっ�
 date: '2023-01-03T09:21:10.223Z'
 author:
   name: Clover_Midori
-  picture: '/assets/blog/authors/clover.png'
+  picture: '/assets/blog/authors/clover.webp'
 ogImage:
-  url: '/assets/blog/hello-world/cover.jpg'
+  url: '/assets/blog/hello-world/cover.webp'
 ---
 
 うっひょー、暇だったからMarkdownブログ作っちゃったぜｗ

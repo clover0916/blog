@@ -5,9 +5,9 @@ coverImage: '/assets/blog/dynamic-routing/cover.jpg'
 date: '2020-03-19T05:35:07.322Z'
 author:
   name: Clover_Midori
-  picture: '/assets/blog/authors/clover.png'
+  picture: '/assets/blog/authors/clover.webp'
 ogImage:
-  url: '/assets/blog/dynamic-routing/cover.jpg'
+  url: '/assets/blog/dynamic-routing/cover.webp'
 ---
 
 Test
