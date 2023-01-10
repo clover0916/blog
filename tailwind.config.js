@@ -25,7 +25,7 @@ module.exports = {
         tight: 1.2,
       },
       fontFamily: {
-        sans: ['Montserrat', 'Noto Sans JP', 'sans-serif'],
+        sans: ['Noto Color Emoji', 'Montserrat', 'Noto Sans JP', 'sans-serif'],
       },
       fontSize: {
         '5xl': '2.5rem',
