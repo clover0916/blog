@@ -6,7 +6,7 @@ const Footer = () => {
     <footer>
       <div className="p-8">
         <p className="tracking-tighter text-center w-full">
-          ©Clover_Midori All Rights Reserved
+          © 2023 Clover_Midori
         </p>
       </div>
     </footer>

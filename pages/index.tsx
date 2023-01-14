@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
@@ -10,14 +11,15 @@ import Post from '../interfaces/post'
 import PostPreview from '../components/post-preview'
 
 type Props = {
-  allPosts: Post[]
+  allPosts: Post[],
 }
 
-export default function Index({ allPosts }: Props) {
+export default function Index({ allPosts }: Props, { }) {
   const heroPost = allPosts[0]
   const subPosts = allPosts.slice(1, 3)
   const fullmorePosts = allPosts.slice(3)
   const morePosts = allPosts.slice(1)
+
   return (
     <>
       <Layout>
