@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react"
 import Container from '../components/container'
 import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
-import SubPost from '../components/sub-post'
-import Intro from '../components/intro'
 import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
 import Post from '../interfaces/post'
-import PostPreview from '../components/post-preview'
+import TopScreen from '../components/top-screen'
 
 type Props = {
   allPosts: Post[],
@@ -19,7 +15,7 @@ export default function Index({ allPosts }: Props, { }) {
   const subPosts = allPosts.slice(1, 3)
   const fullmorePosts = allPosts.slice(3)
   const morePosts = allPosts.slice(1)
-
+  
   return (
     <>
       <Layout>
@@ -27,36 +23,7 @@ export default function Index({ allPosts }: Props, { }) {
           <title>Clo.Mid</title>
         </Head>
         <Container>
-          <div className='flex flex-col h-100svh'>
-            <Intro />
-            <section className='flex-1 shrink-0 p-8 pt-0'>
-              <div className='lg:flex lg:gap-8 h-full'>
-                {heroPost && (
-                  <HeroPost
-                    title={heroPost.title}
-                    coverImage={heroPost.coverImage}
-                    date={heroPost.date}
-                    author={heroPost.author}
-                    slug={heroPost.slug}
-                    excerpt={heroPost.excerpt}
-                  />
-                )}
-                <div className='flex-1 h-full hidden duration-200 lg:flex flex-col gap-4 short:hidden'>
-                  {subPosts.map((post) => (
-                    <PostPreview
-                      key={post.slug}
-                      title={post.title}
-                      coverImage={post.coverImage}
-                      date={post.date}
-                      author={post.author}
-                      slug={post.slug}
-                      excerpt={post.excerpt}
-                    />
-                  ))}
-                </div>
-              </div>
-            </section>
-          </div>
+          <TopScreen heroPost={heroPost} subPosts={subPosts} />
           <div>
             <div className='hidden lg:block'>
               {fullmorePosts.length > 0 && <MoreStories posts={fullmorePosts} />}

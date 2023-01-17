@@ -3,7 +3,7 @@ import DarkSwitch from './dark-switch'
 
 const Header = () => {
   return (
-    <section className="flex-row flex items-center justify-between mb-20 mt-8 mx-8">
+    <section className="flex-row flex items-center justify-between mb-16 mt-8 mx-8">
       <h2 className="text-4xl font-bold tracking-tight">
         <Link href="/" className="hover:underline">
           Clo.Mid
